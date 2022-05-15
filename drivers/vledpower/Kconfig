@@ -1,0 +1,6 @@
+config PROX_VLED_POWER
+	bool "proximity vled power Support"
+	help
+	  This option enables the vled sysfs class in /sys/class/enable.
+	  You'll need this to do anything useful with power. If unsure, say N.
+

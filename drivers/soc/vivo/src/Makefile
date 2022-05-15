@@ -1,0 +1,9 @@
+#add by corebsp
+obj-$(CONFIG_VIVO_BOARDINFO)    +=   boardinfo.o
+obj-$(CONFIG_HALL_MXM1120_DOWN) +=   mxm1120_down.o
+obj-$(CONFIG_HALL_MXM1120_UP)   +=   mxm1120_up.o
+obj-$(CONFIG_VIVO_VIB8846)      +=   vivo_vib8846.o
+obj-y += vivo_vib8846_tristage.o
+obj-y += vivo_vib8846_onepush_doupull.o
+obj-y += timed_output.o
+obj-y += vivo_hall_class.o

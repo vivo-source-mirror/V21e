@@ -1,0 +1,1179 @@
+/* Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+&mdss_mdp {
+	/* vivo panel materiel info start */
+		/* No add new id until you have import driver for new panel ok!!!!!! */
+		vivo,panel_info {
+			/* vivo,panel-materiel-id-list = "materiel_id1", "lcm1_sf_id1 lcm1_sf_id2 lcm1_sf_id3...",
+						"materiel_id2", "lcm2_sf_id1 lcm2_sf_id2 lcm2_sf_id3...",
+						...
+						"materiel_idX, "lcmX_sf_id1, lcmX_sf_id2, lcmX_sf_id3...";
+			*/
+			vivo,panel-materiel-id-list = "1211676", "0x5d";
+		};
+	/* vivo panel materiel info end */
+
+	dsi_pd2006_ea8079_samsung_1080_cmd: qcom,mdss_dsi_pd2006_ea8079_samsung_1080_cmd {
+		qcom,mdss-dsi-panel-name = "mdss_dsi_pd2006_ea8079_samsung_1080_cmd panel";
+		qcom,mdss-dsi-panel-type = "dsi_cmd_mode";
+		qcom,mdss-dsi-panel-physical-type = "oled";
+		qcom,mdss-dsi-virtual-channel-id = <0>;
+		qcom,mdss-dsi-stream = <0>;
+		qcom,mdss-dsi-bpp = <24>;
+		qcom,mdss-dsi-underflow-color = <0xff>;
+		qcom,mdss-dsi-border-color = <0>;
+		qcom,mdss-dsi-reset-sequence = <1 10>, <0 1>, <1 13>;
+		qcom,mdss-dsi-tx-eot-append;
+		qcom,mdss-pan-physical-width-dimension = <69>;
+		qcom,mdss-pan-physical-height-dimension = <152>;
+		qcom,mdss-dsi-traffic-mode = <1>;
+		qcom,mdss-dsi-bllp-eof-power-mode;
+		qcom,mdss-dsi-bllp-power-mode;
+		qcom,mdss-dsi-lane-0-state;
+		qcom,mdss-dsi-lane-1-state;
+		qcom,mdss-dsi-lane-2-state;
+		qcom,mdss-dsi-lane-3-state;
+		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+		qcom,mdss-dsi-mdp-trigger = "none";
+		qcom,mdss-dsi-te-pin-select = <1>;
+		qcom,mdss-dsi-wr-mem-start = <0x2c>;
+		qcom,mdss-dsi-wr-mem-continue = <0x3c>;
+		qcom,mdss-dsi-te-dcs-command = <1>;
+		qcom,mdss-dsi-te-check-enable;
+		qcom,mdss-dsi-te-using-te-pin;
+		qcom,mdss-tear-check-sync-cfg-height = <5000>;
+		qcom,mdss-dsi-mipi-strength-config = <0x22>;
+		qcom,mdss-dsi-lp11-init;
+		qcom,mdss-dsi-project-name = "pd2006";
+		qcom,mdss-dsi-panel-id = <0x20>;
+		qcom,mdss-panel-sre;
+		qcom,mdss-dsi-panel-hdr-enabled;
+		qcom,mdss-dsi-panel-hdr-color-primaries = <14500 15500 32000 17000 15500 30000 8000 3000>;
+		qcom,mdss-dsi-panel-peak-brightness = <4200000>;
+		qcom,mdss-dsi-panel-blackness-level = <3230>;
+		//qcom,dsi-dyn-clk-enable;
+		//qcom,dsi-dyn-clk-list = <1140189120 1130687544>;
+		qcom,vivo-dsi-panel-type = "oled";
+		qcom,ud-fingerprint-support;
+		qcom,dc-dimming-support;
+		qcom,dc-dimming-pre-wait-te-count = <0>;
+		qcom,dc-dimming-wait-te-count = <0>;
+		qcom,dc-dimming-close-dither-threshold = <115>;
+		qcom,elvdd-ctrl-support;
+		qcom,hbm-sre-max-level = <3>;
+		qcom,aod-power-ddic;
+		/* hdr10plus backlight remap support start */
+		qcom,hdr10plus-backlight-remap-support;
+		qcom,hdr10plus-origin-line-pointA = <451 110>;
+		qcom,hdr10plus-origin-line-pointB = <2047 500>;
+		qcom,hdr10plus-hdr10plus-line-pointA = <451 110>;
+		qcom,hdr10plus-hdr10plus-line-pointD = <2047 600>;
+		qcom,hdr10plus-hbm-line-pointC = <0x18 500>;
+		qcom,hdr10plus-hbm-line-pointD = <0x1F4 600>;
+		/* hdr10plus backlight remap support end */
+		qcom,gamut-compensate-support;
+
+		qcom,mdss-dsi-display-timings {
+			timing@0{
+				qcom,mdss-dsi-panel-framerate = <92>;
+				qcom,mdss-dsi-panel-clockrate = <1104000000>;
+				qcom,mdss-dsi-panel-width = <1080>;
+				qcom,mdss-dsi-panel-height = <2376>;
+				qcom,mdss-dsi-h-front-porch = <100>;
+				qcom,mdss-dsi-h-back-porch = <80>;
+				qcom,mdss-dsi-h-pulse-width = <16>;
+				qcom,mdss-dsi-h-sync-skew = <0>;
+				qcom,mdss-dsi-v-back-porch = <60>;
+				qcom,mdss-dsi-v-front-porch = <28>;
+				qcom,mdss-dsi-v-pulse-width = <4>;
+				qcom,mdss-dsi-h-left-border = <0>;
+				qcom,mdss-dsi-h-right-border = <0>;
+				qcom,mdss-dsi-v-top-border = <0>;
+				qcom,mdss-dsi-v-bottom-border = <0>;
+				/* (92-91.5) / 92 = 0.54%, set greater value 2% */
+				qcom,mdss-dsi-panel-jitter = <0x2 0x1>;
+
+				qcom,mdss-dsi-timing-switch-command = [
+					/* set framerate from 91.5fps */
+					39 01 00 00 00 00 02 60 10
+				];
+
+				qcom,mdss-dsi-on-command = [
+					/* dsc setting */
+					39 00 00 00 00 00 02 9D 01
+					39 01 00 00 00 00 81 9E 11 00 00 89 30 80 09 48 04 38 00 21 02 1C 02 1C 02 00 02 0E 00 20 03 2E 00 07 00 0C 03 00 03 15 18 00 10 F0 03 0C 20 00 06 0B 0B 33 0E 1C 2A 38 46 54 62 69 70 77 79 7B 7D 7E 01 02 01 00 09 40 09 BE 19 FC 19 FA 19 F8 1A 38 1A 78 1A B6 2A F6 2B 34 2B 74 3B 74 6B F4 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+					/* sleep out and delay >10ms */
+					05 01 00 00 0C 00 01 11
+					/* VLIN limit current */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 04
+					39 00 00 00 00 00 06 D5 24 9E 9E 00 20
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* common setting: OSC select */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 5A
+					39 00 00 00 00 00 02 D6 11
+					39 00 00 00 00 00 03 FC A5 A5
+					39 00 00 00 00 00 03 F0 A5 A5
+					/* dot clock */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 12
+					39 00 00 00 00 00 02 D7 40
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* common setting: te on */
+					39 01 00 00 00 00 02 35 00
+					/* TSP vsync enable */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 04 DF 83 00 10
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 E6 01
+					39 01 00 00 3F 00 03 F0 A5 A5
+					/* brightness dimming: 1frame, no dimming */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 06
+					39 00 00 00 00 00 02 B7 01
+					39 00 00 00 00 00 03 F0 A5 A5
+					/*Brightness control */
+					39 00 00 00 00 00 02 53 20
+					/* ACL dimming setting */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 D9
+					39 00 00 00 00 00 02 BB 48
+					39 00 00 00 00 00 03 F0 A5 A5
+					39 01 00 00 00 00 02 55 00
+					/* Freq select 91.5fps */
+					39 00 00 00 00 00 02 60 10
+					/* display on */
+					05 01 00 00 00 00 01 29
+					/* seed crc setting begin*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* seed crc setting end*/
+				];
+
+
+				/* seed ore on */
+				qcom,mdss-oled-seed-ore-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 04 87 80 00 00
+					39 00 00 00 00 00 02 B4 00
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed ore off */
+				qcom,mdss-oled-seed-ore-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 87 00
+					39 00 00 00 00 00 02 B4 01
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* display p3 */
+				qcom,mdss-oled-seed-crc-on-command-p3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* srgb */
+				qcom,mdss-oled-seed-crc-on-command-srgb =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0D 04 32 D2 13 0A 01 AF 40 E7 C5 C9 12 BF E7 E7 1A FF FB DC
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc off */
+				qcom,mdss-oled-seed-crc-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 00
+					39 00 00 00 00 00 02 B1 01
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate default 550~2047 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level0 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 100nit 250~550 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level1 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 03 DF 01 0C 01 EE 13 FF DE FF 07 D8 F4 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 20nit 50~250 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level2 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 04 00 03 DF 01 0B 01 EE 13 FF DC FF 07 D8 F2 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 3nit 4~50 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 04 00 00 DF 01 0A 01 EE 10 FF D9 FF 04 D4 F1 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate default 550~2047*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level0 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0D 04 32 D2 13 0A 01 AF 40 E7 C5 C9 12 BF E7 E7 1A FF FB DC
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 100nit 250~550*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level1 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0C 03 2D D2 10 0A 01 AF 3E E7 CC CA 0F BF E4 E7 15 FF FB D9
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 20nit 50~250*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level2 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0B 03 2D D2 0F 0A 01 AF 3D E7 CC CC 0E BF E7 E7 14 FF F9 D5
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 3nit 4~50*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0A 03 2B D2 0F 0A 01 AF 38 E7 C7 CE 0B BF E3 E7 13 FF F9 D4
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*hbm mode 1 610nit*/
+				qcom,mdss-oled-hbm-on-command-level1 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 01 F4
+				];
+
+				/*hbm mode 2 710nit*/
+				qcom,mdss-oled-hbm-on-command-level2 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 03 6B
+				];
+
+				/*hbm mode 3 800nit*/
+				qcom,mdss-oled-hbm-on-command-level3 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 07 FF
+				];
+
+				qcom,mdss-oled-hbm-on-command-ud-fingerprint =
+				[
+					/*DLY OFF*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 4C
+					39 01 00 00 00 00 03 F0 A5 A5
+					/*HBM MODE ON*/
+					39 00 00 00 00 00 02 53 E0
+					39 01 00 00 00 00 03 51 01 F4
+				];
+
+				/* elvss dim on*/
+				qcom,mdss-oled-elvss-dim-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 05
+					39 00 00 00 00 00 02 B7 93
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* elvss dim off*/
+				qcom,mdss-oled-elvss-dim-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 05
+					39 00 00 00 00 00 02 B7 13
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* ps on*/
+				qcom,mdss-oled-ps-on-command = [];
+
+				/*ps off*/
+				qcom,mdss-oled-ps-off-command =
+				[
+					/*DLY ON*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				qcom,mdss-oled-dly-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				qcom,mdss-oled-dly-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 4C
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* hbm off with smooth */
+				qcom,mdss-oled-hbm-off-command =
+				[
+					39 01 00 00 00 00 02 53 28
+				];
+
+				qcom,mdss-oled-hbm-off-command-ud-fingerprint =
+				[
+					39 00 00 00 00 00 02 53 20
+				];
+
+				/* hbm off + close brightness */
+				qcom,mdss-oled-hbm-off-and-close-brightness-command-ud-fingerprint =
+				[
+					//dly on
+					/*39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5*/
+					/* HBM off command */
+					39 00 00 00 00 00 02 53 20
+					/* set brightness to 0 */
+					39 01 00 00 00 00 03 51 00 00
+				];
+
+				/*acl off*/
+				qcom,mdss-oled-acl-off-command =
+				[
+					39 01 00 00 00 00 02 55 00
+				];
+
+				/* acl level 1 8% */
+				qcom,mdss-oled-acl-on-command-level1 =
+				[
+					39 01 00 00 00 00 02 55 01
+				];
+
+				/* acl level 2 10% */
+				qcom,mdss-oled-acl-on-command-level2 =
+				[
+					39 01 00 00 00 00 02 55 02
+				];
+
+				/* acl level 3 20% */
+				qcom,mdss-oled-acl-on-command-level3 =
+				[
+					39 01 00 00 00 00 02 55 03
+				];
+
+				qcom,mdss-oled-dimming-speed =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 06
+					39 00 00 00 00 00 02 B7 28
+					39 00 00 00 00 00 03 F0 A5 A5
+					39 01 00 00 00 00 02 53 28
+				];
+
+				qcom,mdss-oled-dimming-speed-off =
+				[
+					39 01 00 00 00 00 02 53 20
+				];
+
+				qcom,mdss-oled-aod-on-command =
+				[
+					/* display off */
+					39 01 00 00 11 00 02 28 00
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* alpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+				];
+
+				qcom,mdss-oled-aod-diff-set-command =
+				[
+					/* display off */
+					39 01 00 00 00 00 02 28 00
+					/* aod on setting*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off: D1 write D3 for old version panel */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 D3
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+				/* AOD mode setting:alpm 50nit */
+				qcom,mdss-oled-alpm-hbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* alpm */
+					39 00 00 00 00 00 02 E3 02
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:alpm 2nit */
+				qcom,mdss-oled-alpm-lbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 2nit */
+					39 00 00 00 00 00 02 53 23
+					/* alpm */
+					39 00 00 00 00 00 02 E3 02
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:hlpm 50nit */
+				qcom,mdss-oled-hlpm-hbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:hlpm 2nit */
+				qcom,mdss-oled-hlpm-lbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 2nit */
+					39 00 00 00 00 00 02 53 23
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				qcom,mdss-oled-aod-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* 1frame black insertion */
+					39 00 00 00 00 00 02 B0 0A
+					39 00 00 00 00 00 02 EE 02
+					/* VFP diff on */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 04 B0
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 5A
+					/* framerate select 91.5fps */
+					39 00 00 00 00 00 02 60 10
+					/* normal mode */
+					39 00 00 00 00 00 02 53 28
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 11 00 03 F0 A5 A5
+				];
+
+				/*set display on*/
+				qcom,mdss-oled-display-on-command =
+				[
+					39 00 00 00 00 00 02 53 20
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 13 00
+					39 00 00 00 00 00 02 29 00
+					39 01 00 00 00 00 03 9F 5A 5A
+				];
+
+				/*set aod mode display on*/
+				qcom,mdss-oled-aod-on-display-on-command =
+				[
+					39 01 00 00 00 00 01 29
+				];
+
+				qcom,mdss-dsi-off-command =
+				[
+					/* display off,wait >20ms */
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 28 00
+					39 01 00 00 17 00 03 F0 5A 5A
+					/* sleep in,wait >100ms */
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 10 00
+					39 01 00 00 67 00 03 F0 5A 5A
+				];
+				qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-off-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-h-sync-pulse = <0>;
+				qcom,mdss-default-command-state = "dsi_hs_mode";
+				qcom,mdss-oled-seed-crc-compensate-command-state = "dsi_hs_mode";
+
+				qcom,compression-mode = "dsc";
+				qcom,mdss-dsc-slice-width = <540>;
+				qcom,mdss-dsc-slice-height = <24>;
+				qcom,mdss-dsc-slice-per-pkt = <2>;
+				qcom,mdss-dsc-bit-per-component = <8>;
+				qcom,mdss-dsc-bit-per-pixel = <8>;
+				qcom,mdss-dsc-block-prediction-enable;
+			};
+
+			timing@1{
+				qcom,mdss-dsi-panel-framerate = <62>;
+				qcom,mdss-dsi-panel-clockrate = <1104000000>;
+				qcom,mdss-dsi-panel-width = <1080>;
+				qcom,mdss-dsi-panel-height = <2376>;
+				qcom,mdss-dsi-h-front-porch = <60>;
+				qcom,mdss-dsi-h-back-porch = <80>;
+				qcom,mdss-dsi-h-pulse-width = <16>;
+				qcom,mdss-dsi-h-sync-skew = <0>;
+				qcom,mdss-dsi-v-back-porch = <100>;
+				qcom,mdss-dsi-v-front-porch = <28>;
+				qcom,mdss-dsi-v-pulse-width = <4>;
+				qcom,mdss-dsi-h-left-border = <0>;
+				qcom,mdss-dsi-h-right-border = <0>;
+				qcom,mdss-dsi-v-top-border = <0>;
+				qcom,mdss-dsi-v-bottom-border = <0>;
+				/* (62-61.5) / 62 = 0.8%, set greater value: 3% */
+				qcom,mdss-dsi-panel-jitter = <0x3 0x1>;
+
+				qcom,mdss-dsi-timing-switch-command = [
+					/* switch framerate from 61.5fps */
+					39 01 00 00 00 00 02 60 00
+				];
+
+				qcom,mdss-dsi-on-command = [
+					/* dsc setting */
+					39 00 00 00 00 00 02 9D 01
+					39 01 00 00 00 00 81 9E 11 00 00 89 30 80 09 48 04 38 00 21 02 1C 02 1C 02 00 02 0E 00 20 03 2E 00 07 00 0C 03 00 03 15 18 00 10 F0 03 0C 20 00 06 0B 0B 33 0E 1C 2A 38 46 54 62 69 70 77 79 7B 7D 7E 01 02 01 00 09 40 09 BE 19 FC 19 FA 19 F8 1A 38 1A 78 1A B6 2A F6 2B 34 2B 74 3B 74 6B F4 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+					/* sleep out and delay >10ms */
+					05 01 00 00 0C 00 01 11
+					/* VLIN limit current */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 04
+					39 00 00 00 00 00 06 D5 24 9E 9E 00 20
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* common setting: OSC select */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 5A
+					39 00 00 00 00 00 02 D6 11
+					39 00 00 00 00 00 03 FC A5 A5
+					39 00 00 00 00 00 03 F0 A5 A5
+					/* dot clock */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 12
+					39 00 00 00 00 00 02 D7 40
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* common setting: te on */
+					39 01 00 00 00 00 02 35 00
+					/* TSP vsync enable */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 04 DF 83 00 10
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 E6 01
+					39 01 00 00 3F 00 03 F0 A5 A5
+					/* brightness dimming: 1frame, no dimming */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 06
+					39 00 00 00 00 00 02 B7 01
+					39 00 00 00 00 00 03 F0 A5 A5
+					39 00 00 00 00 00 02 53 20
+					/* ACL dimming setting */
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 D9
+					39 00 00 00 00 00 02 BB 48
+					39 00 00 00 00 00 03 F0 A5 A5
+					39 01 00 00 00 00 02 55 00
+					/* Freq select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* display on */
+					05 01 00 00 00 00 01 29
+					/* seed crc setting begin*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+					/* seed crc setting end*/
+				];
+
+				/* seed ore on */
+				qcom,mdss-oled-seed-ore-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 04 87 80 00 00
+					39 00 00 00 00 00 02 B4 00
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed ore off */
+				qcom,mdss-oled-seed-ore-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 87 00
+					39 00 00 00 00 00 02 B4 01
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* display p3 */
+				qcom,mdss-oled-seed-crc-on-command-p3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* srgb */
+				qcom,mdss-oled-seed-crc-on-command-srgb =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0D 04 32 D2 13 0A 01 AF 40 E7 C5 C9 12 BF E7 E7 1A FF FB DC
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc off */
+				qcom,mdss-oled-seed-crc-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 00
+					39 00 00 00 00 00 02 B1 01
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate default 550~2047 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level0 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 05 E8 01 0F 01 EE 19 FF E1 FF 0A DF F6 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 100nit 250~550 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level1 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 05 00 03 DF 01 0C 01 EE 13 FF DE FF 07 D8 F4 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 20nit 50~250 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level2 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 04 00 03 DF 01 0B 01 EE 13 FF DC FF 07 D8 F2 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* seed crc compenstate 3nit 4~50 */
+				qcom,mdss-oled-seed-crc-compensate-p3-level3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 E8 04 00 00 DF 01 0A 01 EE 10 FF D9 FF 04 D4 F1 F7 02 FF FF FF
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate default 550~2047*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level0 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0D 04 32 D2 13 0A 01 AF 40 E7 C5 C9 12 BF E7 E7 1A FF FB DC
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 100nit 250~550*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level1 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0C 03 2D D2 10 0A 01 AF 3E E7 CC CA 0F BF E4 E7 15 FF FB D9
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 20nit 50~250*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level2 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0B 03 2D D2 0F 0A 01 AF 3D E7 CC CC 0E BF E7 E7 14 FF F9 D5
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/*seed crc compenstate 3nit 4~50*/
+				qcom,mdss-oled-seed-crc-compensate-srgb-level3 =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 81 90
+					39 00 00 00 00 00 17 B1 00 AF 0A 03 2B D2 0F 0A 01 AF 38 E7 C7 CE 0B BF E3 E7 13 FF F9 D4
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* hbm mode 1 610nit */
+				qcom,mdss-oled-hbm-on-command-level1 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 01 F4
+				];
+
+				/* hbm mode 2 710nit */
+				qcom,mdss-oled-hbm-on-command-level2 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 03 6B
+				];
+
+				/* hbm mode 3 800nit */
+				qcom,mdss-oled-hbm-on-command-level3 =
+				[
+					39 00 00 00 00 00 02 53 E8
+					39 01 00 00 00 00 03 51 07 FF
+				];
+
+				qcom,mdss-oled-hbm-on-command-ud-fingerprint =
+				[
+					/*DLY OFF*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 4C
+					39 01 00 00 00 00 03 F0 A5 A5
+					/*HBM MODE ON*/
+					39 00 00 00 00 00 02 53 E0
+					39 01 00 00 00 00 03 51 01 F4
+				];
+
+				/* elvss dim on*/
+				qcom,mdss-oled-elvss-dim-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 05
+					39 00 00 00 00 00 02 B7 93
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* elvss dim off*/
+				qcom,mdss-oled-elvss-dim-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 05
+					39 00 00 00 00 00 02 B7 13
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* ps on*/
+				qcom,mdss-oled-ps-on-command = [];
+
+				/*ps off*/
+				qcom,mdss-oled-ps-off-command =
+				[
+					/*DLY ON*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				qcom,mdss-oled-dly-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				qcom,mdss-oled-dly-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 4C
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+
+				/* hbm off with smooth */
+				qcom,mdss-oled-hbm-off-command =
+				[
+					39 01 00 00 00 00 02 53 28
+				];
+
+				qcom,mdss-oled-hbm-off-command-ud-fingerprint =
+				[
+					39 00 00 00 00 00 02 53 20
+				];
+
+				/* hbm off + close brightness */
+				qcom,mdss-oled-hbm-off-and-close-brightness-command-ud-fingerprint =
+				[
+					//dly on
+					/*39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 01
+					39 00 00 00 00 00 02 B7 44
+					39 01 00 00 00 00 03 F0 A5 A5*/
+					/* HBM off command */
+					39 00 00 00 00 00 02 53 20
+					/* set brightness to 0 */
+					39 01 00 00 00 00 03 51 00 00
+				];
+
+				/* acl off */
+				qcom,mdss-oled-acl-off-command =
+				[
+					39 01 00 00 00 00 02 55 00
+				];
+
+				/* acl level 1 8% */
+				qcom,mdss-oled-acl-on-command-level1 =
+				[
+					39 01 00 00 00 00 02 55 01
+				];
+
+				/* acl level 2 10% */
+				qcom,mdss-oled-acl-on-command-level2 =
+				[
+					39 01 00 00 00 00 02 55 02
+				];
+
+				/* acl level 3 20% */
+				qcom,mdss-oled-acl-on-command-level3 =
+				[
+					39 01 00 00 00 00 02 55 03
+				];
+
+				qcom,mdss-oled-dimming-speed =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 02 B0 06
+					39 00 00 00 00 00 02 B7 28
+					39 00 00 00 00 00 03 F0 A5 A5
+					39 01 00 00 00 00 02 53 28
+				];
+
+				qcom,mdss-oled-dimming-speed-off =
+				[
+					39 01 00 00 00 00 02 53 20
+				];
+
+				qcom,mdss-oled-aod-on-command =
+				[
+					/* display off */
+					39 01 00 00 11 00 02 28 00
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* alpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+
+				];
+
+				qcom,mdss-oled-aod-diff-set-command =
+				[
+					/* display off */
+					39 01 00 00 00 00 02 28 00
+					/* aod on setting*/
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off: D1 write D3 for old version panel */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 D3
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 00 00 03 F0 A5 A5
+				];
+				/* AOD mode setting:alpm 50nit */
+				qcom,mdss-oled-alpm-hbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* alpm */
+					39 00 00 00 00 00 02 E3 02
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:alpm 2nit */
+				qcom,mdss-oled-alpm-lbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 2nit */
+					39 00 00 00 00 00 02 53 23
+					/* alpm */
+					39 00 00 00 00 00 02 E3 02
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:hlpm 50nit */
+				qcom,mdss-oled-hlpm-hbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 50nit */
+					39 00 00 00 00 00 02 53 22
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				/* AOD mode setting:hlpm 2nit */
+				qcom,mdss-oled-hlpm-lbirghtness-on-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* VLOUT3 change */
+					39 00 00 00 00 00 02 D4 CB
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* VFP diff off */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 00 00
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 21
+					/* AOD high mode: 2nit */
+					39 00 00 00 00 00 02 53 23
+					/* hlpm */
+					39 00 00 00 00 00 02 E3 00
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 22 00 03 F0 A5 A5
+					/* display on */
+					39 01 00 00 00 00 02 29 00
+				];
+
+				qcom,mdss-oled-aod-off-command =
+				[
+					39 00 00 00 00 00 03 F0 5A 5A
+					39 00 00 00 00 00 03 FC 5A 5A
+					/* 1frame black insertion */
+					39 00 00 00 00 00 02 B0 0A
+					39 00 00 00 00 00 02 EE 02
+					/* VFP diff on */
+					39 00 00 00 00 00 02 B0 0B
+					39 00 00 00 00 00 03 D8 04 B0
+					39 00 00 00 00 00 02 B0 16
+					39 00 00 00 00 00 02 D1 5A
+					/* framerate select 61.5fps */
+					39 00 00 00 00 00 02 60 00
+					/* normal mode */
+					39 00 00 00 00 00 02 53 28
+					39 00 00 00 00 00 03 FC A5 A5
+					39 01 00 00 11 00 03 F0 A5 A5
+				];
+
+				/*set display on*/
+				qcom,mdss-oled-display-on-command =
+				[
+					39 00 00 00 00 00 02 53 20
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 13 00
+					39 00 00 00 00 00 02 29 00
+					39 01 00 00 00 00 03 9F 5A 5A
+				];
+
+				/*set aod mode display on*/
+				qcom,mdss-oled-aod-on-display-on-command =
+				[
+					39 01 00 00 00 00 01 29
+				];
+
+				qcom,mdss-dsi-off-command =
+				[
+					/* display off,wait >20ms */
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 28 00
+					39 01 00 00 17 00 03 F0 5A 5A
+					/* sleep in,wait >100ms */
+					39 00 00 00 00 00 03 9F A5 A5
+					39 00 00 00 00 00 02 10 00
+					39 01 00 00 67 00 03 F0 5A 5A
+				];
+				qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-off-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-h-sync-pulse = <0>;
+				qcom,mdss-default-command-state = "dsi_hs_mode";
+				qcom,mdss-oled-seed-crc-compensate-command-state = "dsi_hs_mode";
+
+				qcom,compression-mode = "dsc";
+				qcom,mdss-dsc-slice-width = <540>;
+				qcom,mdss-dsc-slice-height = <24>;
+				qcom,mdss-dsc-slice-per-pkt = <2>;
+				qcom,mdss-dsc-bit-per-component = <8>;
+				qcom,mdss-dsc-bit-per-pixel = <8>;
+				qcom,mdss-dsc-block-prediction-enable;
+			};
+		};
+	};
+};
